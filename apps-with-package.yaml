@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  name: install basic apps
+  tasks:
+  - name: instalable with package
+    package:
+      name: 
+        - zsh
+        - git
+        - rofi
+        - stow
+        - bat
+        - alacritty
+        - tmux
+        - fzf
+        - flameshot
+      state: present
+    become: yes

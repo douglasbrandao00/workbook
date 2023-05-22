@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  name: install SF Mono font
+  vars:
+    font_path: "{{ansible_user_dir }}/.local/share/fonts"
+    sf_font_path: "{{ ansible_user_dir }}/tmp/fonts"
+
+  tasks:
+  - name: clone repo
+    ansible.builtin.git:
+      repo: "https://github.com/epk/SF-Mono-Nerd-Font.git"
+      dest: "{{sf_font_path}}"
+      clone: true
+      force: true
+
+
+  - name: install font
+    ansible.builtin.shell:
+      cmd: mv {{sf_font_path}}/* {{font_path}} && fc-cache -fv 

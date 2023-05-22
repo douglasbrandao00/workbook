@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  name: install qtile with pip
+  tasks:
+  - name: install dependencies
+    ansible.builtin.pip:
+      name: 
+        - xcffib
+        - psutil
+
+  - name: install qtile
+    ansible.builtin.pip:
+      name: qtile
+

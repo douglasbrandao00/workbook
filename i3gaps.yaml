@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  name: install i3
+  tasks:
+    - name: add i3gaps into ppa
+      ansible.builtin.apt_repository:
+        repo: ppa:regolith-linux/stable
+        state: present
+
+    - name: install i3gaps
+      ansible.builtin.apt:
+        name: i3-gaps
+        update_cache: yes
+        state: present
+
+

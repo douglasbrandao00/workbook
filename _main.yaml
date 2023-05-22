@@ -1,0 +1,20 @@
+---
+- name: include essential libs
+  import_playbook: essential-libs.yaml
+
+- name: include basic apps with package
+  import_playbook: apps-with-package.yaml 
+
+- name: include qtile
+  import_playbook: qtile.yaml 
+
+- name: include adsf
+  import_playbook: asdf.yaml 
+
+- name: include fonts
+  import_playbook: fonts.yaml 
+
+# languages
+- name: include rust
+  import_playbook: rust.yaml 
+
